@@ -1,6 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if(mouse_x >= 992){
+	return;
+}
+
+
 if(global.selection_mode == LINE &&
 	(global.left_click_pos[0] != -1)&&
 	(global.left_click_pos[0] != -1)){

@@ -2,6 +2,10 @@
 // You can write your code in this editor
 /// @description Left Click
 
+if(mouse_x >= 992){
+	return;
+}
+
 if(global.selection_mode == SINGULAR){
 	
 	var _grid_x = floor(mouse_x / 10);
