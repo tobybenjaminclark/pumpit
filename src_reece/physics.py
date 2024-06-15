@@ -8,8 +8,13 @@ def energy_flow(K, area, temp_grad):
     energy_flow = -K * area * temp_grad
     return energy_flow
 
-def therm_conduct(lamb):
-    pass
+def therm_conduct():
+    SHC = 1005
+    density = 1.225
+    vol_heat_cap = SHC * density    #SHC is specific heat capacity, atm is standard atmospheric pressure
+    boltzmann = 1.381 * (10**-23)
+    mean_free_path = 10**-7
+
 
 def calc_temp_gradient(coordinate):     #coordinate is [y, x] in room
     init_temp = grid[coordinate[0]][coordinate[1]]  # gets the temp based on the coordinate
@@ -27,17 +32,22 @@ def calc_temp_gradient(coordinate):     #coordinate is [y, x] in room
     total = 0
     for i in temp_gradients:
         total += i
-    average = total / 4
+    average = total / len(temp_gradients)
     return average
 
-grid_size = (5,5)
+grid_size = (5,5)     #x by y
 grid = np.full(grid_size, 20+273.15)
-grid[3][3] = 273.15 + 50
+heat_pump = (1,1)   #x, y
+grid[heat_pump[0]][heat_pump[1]] = 273.15 - 50
 gradient_grid = np.zeros(grid_size)
+print(grid)
 print(gradient_grid)
-for n in range(20):
+for i in range(10):
     for x in range(0,grid_size[0]):
         for y in range(0,grid_size[1]):
-            gradient_grid[x,y] = calc_temp_gradient((x,y))
+            if not( x == heat_pump[0] and y == heat_pump[1]):
+                gradient_grid[x,y] = calc_temp_gradient((x,y))
+    grid += gradient_grid
+
 print(grid)
 print(gradient_grid)
