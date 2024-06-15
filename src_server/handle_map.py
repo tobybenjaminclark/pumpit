@@ -25,7 +25,7 @@ class MapHandler():
         self.map = self.create_test_map()
         self.heatmap = self.create_test_heatmap()
 
-        self.display = True
+        self.display = False
         if(self.display): 
             self.thread = Thread(target=self.display_map)
             self.thread.start()

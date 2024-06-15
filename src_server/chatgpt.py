@@ -17,5 +17,5 @@ def generate_response(prompt):
   Returns:
       String: The response to the given prompt
   """
-  response = model.invoke(prompt)
+  response = model.invoke(prompt + ". Please reply a very, very short concise reply.")
   return response

@@ -10,7 +10,8 @@
 /// @date   16/01/2023
 
 global.outgoing = ds_list_create();
-global.response = ""
+global.response = "";
+global.last_gpt = "Hi, I'm Heat Geek, how can I help?";
 
 client_socket = network_create_socket(network_socket_tcp);
 server_socket = network_connect_raw_async(client_socket, "127.0.0.1", 7783);

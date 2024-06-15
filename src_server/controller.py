@@ -41,7 +41,7 @@ class JazzhandsController():
 
             message = {"heatmap": self.map_handler.heatmap}
             
-            print(message)
+            # print(message)
             self.try_transmit_to_client(message)
         print("stopped running")
 
