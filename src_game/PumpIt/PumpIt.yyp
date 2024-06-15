@@ -36,6 +36,7 @@
   "resources":[
     {"id":{"name":"fntCoolFont","path":"fonts/fntCoolFont/fntCoolFont.yy",},},
     {"id":{"name":"fntSmallCool","path":"fonts/fntSmallCool/fntSmallCool.yy",},},
+    {"id":{"name":"lastGpt","path":"objects/lastGpt/lastGpt.yy",},},
     {"id":{"name":"oClient","path":"objects/oClient/oClient.yy",},},
     {"id":{"name":"oFloorplanMap","path":"objects/oFloorplanMap/oFloorplanMap.yy",},},
     {"id":{"name":"oGoBackToFloorplan","path":"objects/oGoBackToFloorplan/oGoBackToFloorplan.yy",},},
@@ -51,7 +52,9 @@
     {"id":{"name":"bressenhams","path":"scripts/bressenhams/bressenhams.yy",},},
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},},
     {"id":{"name":"sprButton","path":"sprites/sprButton/sprButton.yy",},},
+    {"id":{"name":"sprChatGpt","path":"sprites/sprChatGpt/sprChatGpt.yy",},},
     {"id":{"name":"sprGridTile","path":"sprites/sprGridTile/sprGridTile.yy",},},
+    {"id":{"name":"sprHeatGeek","path":"sprites/sprHeatGeek/sprHeatGeek.yy",},},
     {"id":{"name":"sprLogo","path":"sprites/sprLogo/sprLogo.yy",},},
     {"id":{"name":"sprWallTile","path":"sprites/sprWallTile/sprWallTile.yy",},},
     {"id":{"name":"sprWhite","path":"sprites/sprWhite/sprWhite.yy",},},

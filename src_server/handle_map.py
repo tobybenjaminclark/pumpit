@@ -30,7 +30,7 @@ class MapHandler():
         self.handle_maps()
 
 
-        self.display = True
+        self.display = False
         if(self.display): 
             self.thread = Thread(target=self.display_map)
             self.thread.start()

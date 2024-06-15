@@ -4,7 +4,7 @@ import socket
 import threading
 from queue import Queue
 import json
-#from chatgpt import *
+from chatgpt import *
 
 HOST = "127.0.0.1"
 PORT = 7783
@@ -22,7 +22,7 @@ class GMS2Client():
         # Create an event to signal the subthreads to safely stop execution.
         self.stop_event = threading.Event()
         self.conn = None
-        self.next_send = "EMPTY"
+        self.next_send = ""
         self.client_queue = Queue()
 
     def start_thread(self) -> None:
@@ -128,10 +128,10 @@ class GMS2Client():
                 reply = reply.split('\x00', 1)[0]
                 treply = json.loads(reply)
                 if(treply['type'] == "GPT"):
-                    #self.next_send = generate_response(treply['prompt'])
-                    self.next_send = "hello"
+                    self.next_send = "GPT" + generate_response(treply['prompt']).replace('\n', '').replace('\r', '')
             except Exception as e:
                 print(f"Error decoding {reply} :: {e}")
-        self.next_send = ""
+                self.next_send = ""
+
         print(reply)
         print()
