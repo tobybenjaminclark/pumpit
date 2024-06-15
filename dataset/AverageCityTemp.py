@@ -10,7 +10,7 @@ current_directory = os.getcwd()
 
 # Construct the full path to your CSV file
 file_name = 'averaged_data.csv'
-file_path = os.path.join(current_directory, "dataset", "historicalTemps", file_name)
+file_path = os.path.join(current_directory, "pumpit", "dataset", file_name)
 
 # Step 1: Load data into a pandas DataFrame
 df = pd.read_csv(file_path)
