@@ -6,7 +6,7 @@ from queue import Queue
 import json
 
 
-HOST = "10.13.22.37"
+HOST = "127.0.0.1"
 PORT = 9999
 
 
@@ -100,11 +100,6 @@ class GMS2Client():
             if not self.client_queue.empty():
                 pass
 
-
-
-
-
-
         return None
 
     def receive_data(self, conn):
@@ -114,19 +109,16 @@ class GMS2Client():
         data = conn.recv(1024)
 
         data = data.decode('latin-1')
-
-        
-
         print(data)
 
         return data
         
     def send_response(self, response):
             
-            if self.conn is None:
-                return
-            
-            self.conn.send(json.dumps(response).encode('utf-8') + b'\n')
-            reply = self.receive_data(self.conn)
-            print(reply)
-            print()
+        if self.conn is None:
+            return
+
+        self.conn.send(json.dumps(response).encode('utf-8') + b'\n')
+        reply = self.receive_data(self.conn)
+        print(reply)
+        print()

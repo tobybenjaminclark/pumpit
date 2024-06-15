@@ -5,4 +5,4 @@ draw_self();
 draw_set_color(c_black);
 
 draw_set_valign(fa_center);
-draw_text(x, y, "Submit");
+draw_text(x, y, "Ask");
