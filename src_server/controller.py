@@ -1,7 +1,3 @@
-    # JazzHands | JazzHandsController
-# Written by Amber Swarbrick 06/01/2024
-# Code Review Passed by Toby Clark 06/01/2024
-
 from gamemaker_handler import GMS2Client
 from queue import Queue
 
@@ -60,7 +56,6 @@ class JazzhandsController():
         Safely end all threads and terminate the main process.
         """
         print("CTRL+C has been pressed. Ending threads.")
-        self.pi_client.stop_thread()
         self.gamemaker_client.stop_thread()
         self.running = False
         exit(0)

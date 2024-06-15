@@ -126,12 +126,12 @@ class GMS2Client():
         return received_data
 
             
-    def send_response(self, contours):
+    def send_response(self, message):
             
             if self.conn is None:
                 return
             
 
-            success_response = {"msg": "hello"}
+            success_response = {"msg": message}
             
             self.conn.send(json.dumps(success_response).encode('utf-8') + b'\n')
