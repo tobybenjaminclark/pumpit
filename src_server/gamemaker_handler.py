@@ -7,7 +7,7 @@ import json
 
 
 HOST = "127.0.0.1"
-PORT = 9999
+PORT = 7783
 
 
 class GMS2Client():
@@ -109,7 +109,7 @@ class GMS2Client():
         data = conn.recv(1024)
 
         data = data.decode('latin-1')
-        print(data)
+        if(data != "EMPTY"): print(data)
 
         return data
         

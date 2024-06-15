@@ -9,12 +9,11 @@
 /// @author Toby Benjamin Clark
 /// @date   16/01/2023
 
-global.last_repsonse = "EMPTY";
 global.outgoing = ds_list_create();
 
 
 client_socket = network_create_socket(network_socket_tcp);
-server_socket = network_connect_raw_async(client_socket, "127.0.0.1", 9999);
+server_socket = network_connect_raw_async(client_socket, "127.0.0.1", 7783);
 //create a buffer with which to send information
 send_buffer = buffer_create(512, buffer_fixed, 1);
 

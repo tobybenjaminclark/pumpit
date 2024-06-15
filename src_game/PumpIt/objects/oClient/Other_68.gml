@@ -23,7 +23,6 @@ if(n_id == server_socket)
  
         // Original string
         var originalString = string(cmd_type);
-		global.last_repsonse = originalString;
  
         jsonData = json_parse(originalString)
 		
@@ -53,12 +52,19 @@ if(n_id == server_socket)
 		
 		buffer_seek(send_buffer, buffer_seek_start, 0);
 		
-		// toby - for some reason the last two chars are not sent over the socket
-		// hack fix send two extra chars
-		buffer_write(send_buffer, buffer_string, global.outgoing);
+
+		var senddata = "EMPTY"
+		if(ds_list_size(global.outgoing) > 0){
+			show_message("sent other")
+			senddata = global.outgoing[| 0];
+			ds_list_delete(global.outgoing, 0);
+		}
+		
+		show_debug_message(senddata);
+		buffer_write(send_buffer, buffer_string, senddata);
 		network_send_raw(server_socket, send_buffer, buffer_get_size(send_buffer));
-		global.last_outgoing = global.outgoing;
-		global.outgoing = "EMPTY";
+		buffer_delete(send_buffer);
+		send_buffer = buffer_create(512, buffer_fixed, 1);
 		
 		
     }
