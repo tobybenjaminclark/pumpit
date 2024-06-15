@@ -17,31 +17,45 @@ class MapHandler():
 
     def __init__(self):
         self.map = self.create_test_map()
-        self.display = True
+        self.heatmap = self.create_test_heatmap()
+
+        self.display = False
         if(self.display): 
             self.thread = Thread(target=self.display_map)
             self.thread.start()
         
         
-        # actual code here
-        while True:
-            pass
+
+
+    def handle_maps(self):
+
+        # generate permutations of maps
+
+        # run simulation on each
+
+        # return the best, and the heatmap
+
+        return self.map, self.heatmap
+
 
         
         
+    def create_test_heatmap(self):
+
+        return [[20] * 10] * 10
 
     def create_test_map(self):
         return [
-            [Cell.WALL] * 10,
-            [Cell.WALL, Cell.LIVING_ROOM, Cell.LIVING_ROOM, Cell.LIVING_ROOM, Cell.LIVING_ROOM, Cell.WALL, Cell.KITCHEN, Cell.KITCHEN, Cell.KITCHEN, Cell.WALL],
-            [Cell.WALL, Cell.LIVING_ROOM, Cell.LIVING_ROOM, Cell.LIVING_ROOM, Cell.LIVING_ROOM, Cell.WALL, Cell.KITCHEN, Cell.KITCHEN, Cell.KITCHEN, Cell.WALL],
-            [Cell.WALL, Cell.LIVING_ROOM, Cell.LIVING_ROOM, Cell.LIVING_ROOM, Cell.LIVING_ROOM, Cell.WALL, Cell.KITCHEN, Cell.KITCHEN, Cell.KITCHEN, Cell.WALL],
-            [Cell.WALL, Cell.DOOR, Cell.WALL, Cell.WALL, Cell.WALL, Cell.WALL, Cell.WALL, Cell.WALL, Cell.DOOR, Cell.WALL],
-            [Cell.WALL, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.WALL],
-            [Cell.WALL, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.WALL],
-            [Cell.WALL, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.WALL],
-            [Cell.WALL, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.OTHER, Cell.WALL],
-            [Cell.WALL] * 10
+            [Cell.WALL.value] * 10,
+            [Cell.WALL.value, Cell.LIVING_ROOM.value, Cell.LIVING_ROOM.value, Cell.LIVING_ROOM.value, Cell.LIVING_ROOM.value, Cell.WALL.value, Cell.KITCHEN.value, Cell.KITCHEN.value, Cell.KITCHEN.value, Cell.WALL.value],
+            [Cell.WALL.value, Cell.LIVING_ROOM.value, Cell.LIVING_ROOM.value, Cell.LIVING_ROOM.value, Cell.LIVING_ROOM.value, Cell.WALL.value, Cell.KITCHEN.value, Cell.KITCHEN.value, Cell.KITCHEN.value, Cell.WALL.value],
+            [Cell.WALL.value, Cell.LIVING_ROOM.value, Cell.LIVING_ROOM.value, Cell.LIVING_ROOM.value, Cell.LIVING_ROOM.value, Cell.WALL.value, Cell.KITCHEN.value, Cell.KITCHEN.value, Cell.KITCHEN.value, Cell.WALL.value],
+            [Cell.WALL.value, Cell.DOOR.value, Cell.WALL.value, Cell.WALL.value, Cell.WALL.value, Cell.WALL.value, Cell.WALL.value, Cell.WALL.value, Cell.DOOR.value, Cell.WALL.value],
+            [Cell.WALL.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.WALL.value],
+            [Cell.WALL.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.WALL.value],
+            [Cell.WALL.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.WALL.value],
+            [Cell.WALL.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.OTHER.value, Cell.WALL.value],
+            [Cell.WALL.value] * 10
         ]
 
     
@@ -62,7 +76,7 @@ class MapHandler():
 
     def get_color(self, cell):
         color_map = {
-            Cell.WALL: 'black',
+            Cell.WALL: 'purple',
             Cell.WINDOW: 'blue',
             Cell.DOOR: 'brown',
             Cell.LIVING_ROOM: 'green',

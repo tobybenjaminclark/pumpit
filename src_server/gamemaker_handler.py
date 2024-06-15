@@ -107,7 +107,6 @@ class GMS2Client():
 
         return None
 
-
     def receive_data(self, conn):
         # Initialize an empty byte string to accumulate data
         received_data = b""  
@@ -124,14 +123,10 @@ class GMS2Client():
                 break
 
         return received_data
-
-            
-    def send_response(self, message):
+        
+    def send_response(self, response):
             
             if self.conn is None:
                 return
             
-
-            success_response = {"msg": message}
-            
-            self.conn.send(json.dumps(success_response).encode('utf-8') + b'\n')
+            self.conn.send(json.dumps(response).encode('utf-8') + b'\n')
