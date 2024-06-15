@@ -19,10 +19,12 @@ class MapHandler():
         self.map = self.create_test_map()
         self.heatmap = self.create_test_heatmap()
 
-        self.display = False
+        self.display = True
         if(self.display): 
             self.thread = Thread(target=self.display_map)
             self.thread.start()
+
+        self.handle_maps()
 
         
         
@@ -37,62 +39,48 @@ class MapHandler():
 
         # return the best, and the heatmap
 
-        pos = self.find_possible_unit_positions()
-
-        for x in range(0, len(pos) - 1, 2):
-            #print(f"{pos[x]}{pos[x+1]}")
-            pass
-
+        pos = self.find_walls_start_end(self.map)
+        print(pos)
 
         return self.map, self.heatmap
 
+    def find_walls_start_end(self,matrix):
+        def horizontal_stretches(self,matrix):
+            horizontal_result = []
+            for i in range(len(matrix)):
+                start = 0
+                while start < len(matrix[i]):
+                    if matrix[i][start] == 1:
+                        end = start
+                        while end < len(matrix[i]) and matrix[i][end] == 1:
+                            end += 1
+                        if end - start > 1:  # At least 2 consecutive 1s
+                            horizontal_result.append(((i, start), (i, end - 1)))
+                        start = end
+                    else:
+                        start += 1
+            return horizontal_result
 
-    def find_possible_unit_positions(self):
-        # find lengths of vertical and horizontal wall stretches
+        def vertical_stretches(self,matrix):
+            vertical_result = []
+            for j in range(len(matrix[0])):
+                start = 0
+                while start < len(matrix):
+                    if matrix[start][j] == 1:
+                        end = start
+                        while end < len(matrix) and matrix[end][j] == 1:
+                            end += 1
+                        if end - start > 1:  # At least 2 consecutive 1s
+                            vertical_result.append(((start, j), (end - 1, j)))
+                        start = end
+                    else:
+                        start += 1
+            return vertical_result
 
-
-        wall_vals = []
-
-        # if you find a start value, search until you find an end value
-
-
-
-
-
-        for y in range(len(self.map)):
-
-            counter = 0
-            
-            for x in range(len(self.map[y])):
-                
-                if self.map[y][x] == Cell.WALL.value:
-
-                    if counter == 0:
-                        wall_vals.append([x, y])
-                    elif x == len(self.map[y]) - 1:
-                        wall_vals.append([x, y])
-
-                    counter +=1
-                
-                
-                else:
-                    if counter > 0:
-                        counter = 0
-                        # do not add singular length walls
-                        if [x-1, y] in wall_vals:
-                            wall_vals.remove([x-1,y])
-                        else:
-                            wall_vals.append([x-1, y])
-
-        return wall_vals
+        horizontal_result = horizontal_stretches(self,matrix)
+        vertical_result = vertical_stretches(self,matrix)
         
-
-
-            
-        
-
-                    
-                
+        return horizontal_result, vertical_result
         
         
     def create_test_heatmap(self):
