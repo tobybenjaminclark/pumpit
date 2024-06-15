@@ -1,4 +1,5 @@
 /// @description Draws Floorplan Grid
+if(!global.show_floorplan) return;
 
 if(global.selection_mode == LINE && global.left_click_pos[0] != -1 && global.left_click_pos[1] != -1){
 	
@@ -14,9 +15,9 @@ if(global.selection_mode == LINE && global.left_click_pos[0] != -1 && global.lef
 
 
 	draw_set_color(c_black);
-	
+	draw_set_font(fntSmallCool);
 	distance = round(((distance / 10) / 5) * 10) / 10
-	draw_text(mouse_x + 10, mouse_y + 10, string(distance) + "m");
+	draw_text(p1[0] + (dx/2) + 10, p1[1] + (dy/2) + 10, string(distance) + "m");
 	draw_line(p1[0], p1[1], mouse_x, mouse_y);
 	
 }
