@@ -37,6 +37,8 @@
     {"id":{"name":"oFloorplanMap","path":"objects/oFloorplanMap/oFloorplanMap.yy",},},
     {"id":{"name":"oVisualiseTile","path":"objects/oVisualiseTile/oVisualiseTile.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"macros","path":"scripts/macros/macros.yy",},},
+    {"id":{"name":"Script2","path":"scripts/Script2/Script2.yy",},},
     {"id":{"name":"sprGridTile","path":"sprites/sprGridTile/sprGridTile.yy",},},
     {"id":{"name":"sprWallTile","path":"sprites/sprWallTile/sprWallTile.yy",},},
     {"id":{"name":"sprWindowTile","path":"sprites/sprWindowTile/sprWindowTile.yy",},},
