@@ -12,8 +12,11 @@ if(global.selection_mode == LINE &&
 	var _grid_x2 = floor(global.right_click_pos[0]);
 	var _grid_y2 = floor(global.right_click_pos[1]);
 
-	var _points = bressenhams_line_algorithm(_grid_x1, _grid_y1, _grid_x2, _grid_y2)
-
+	var _points = bressenhams_line_algorithm(_grid_x1, _grid_y1, _grid_x2, _grid_y2);
+	
+	global.left_click_pos = [-1, -1];
+	global.right_click_pos = [-1, -1];
+	
 	for(var _i = 0; _i < array_length(_points); _i++){
 		// Ensure the coordinates are within the grid bounds
 		show_debug_message(_grid_x1);
