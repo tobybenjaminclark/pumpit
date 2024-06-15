@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"bressenhams",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"bressenhams",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
