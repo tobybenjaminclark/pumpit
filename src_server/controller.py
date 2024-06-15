@@ -10,8 +10,7 @@ class JazzhandsController():
     running: bool                                   # A flag to determine if the program has ended. Facilitates safe termination of threads.
     gamemaker_client: GMS2Client 
     gamemaker_queue: Queue                             # An instance of the client queue. Facilitates sending gesture data to the client object.
-    pi_queue: Queue                          # An instance of the gesture_recognition queue. Allows transmission of gesture data to the client.
-    
+
 
     
 
