@@ -23,15 +23,15 @@ if(n_id == server_socket)
  
         // Original string
         var originalString = string(cmd_type);
- 
-        jsonData = json_parse(originalString)
-		
-		show_debug_message(jsonData);
+		global.response = originalString;
+        
 		
 		try
 		{
 			
+			jsonData = json_parse(originalString)
 		
+			show_debug_message(jsonData);
 	        // Check if the struct has variable
 	        if variable_struct_exists(jsonData, "map")
 	        {
@@ -53,7 +53,7 @@ if(n_id == server_socket)
 		buffer_seek(send_buffer, buffer_seek_start, 0);
 		
 
-		var senddata = "EMPTY"
+		var senddata = ""
 		if(ds_list_size(global.outgoing) > 0){
 			show_message("sent other")
 			senddata = global.outgoing[| 0];
