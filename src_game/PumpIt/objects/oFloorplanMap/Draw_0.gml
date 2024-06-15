@@ -1,4 +1,5 @@
 /// @description Draws Floorplan Grid
+if(!global.show_floorplan) return;
 
 if(global.selection_mode == LINE && global.left_click_pos[0] != -1 && global.left_click_pos[1] != -1){
 	

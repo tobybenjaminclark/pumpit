@@ -36,11 +36,15 @@
   "resources":[
     {"id":{"name":"fntCoolFont","path":"fonts/fntCoolFont/fntCoolFont.yy",},},
     {"id":{"name":"fntSmallCool","path":"fonts/fntSmallCool/fntSmallCool.yy",},},
+    {"id":{"name":"oClient","path":"objects/oClient/oClient.yy",},},
     {"id":{"name":"oFloorplanMap","path":"objects/oFloorplanMap/oFloorplanMap.yy",},},
+    {"id":{"name":"oGoBackToFloorplan","path":"objects/oGoBackToFloorplan/oGoBackToFloorplan.yy",},},
+    {"id":{"name":"oGoToAI","path":"objects/oGoToAI/oGoToAI.yy",},},
     {"id":{"name":"oInputBox","path":"objects/oInputBox/oInputBox.yy",},},
     {"id":{"name":"oLabel","path":"objects/oLabel/oLabel.yy",},},
     {"id":{"name":"oSubmitLocationButton","path":"objects/oSubmitLocationButton/oSubmitLocationButton.yy",},},
     {"id":{"name":"oVisualiseTile","path":"objects/oVisualiseTile/oVisualiseTile.yy",},},
+    {"id":{"name":"rmAI","path":"rooms/rmAI/rmAI.yy",},},
     {"id":{"name":"rmFloorplan","path":"rooms/rmFloorplan/rmFloorplan.yy",},},
     {"id":{"name":"rmWelcome","path":"rooms/rmWelcome/rmWelcome.yy",},},
     {"id":{"name":"bressenhams","path":"scripts/bressenhams/bressenhams.yy",},},
@@ -57,6 +61,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rmWelcome","path":"rooms/rmWelcome/rmWelcome.yy",},},
     {"roomId":{"name":"rmFloorplan","path":"rooms/rmFloorplan/rmFloorplan.yy",},},
+    {"roomId":{"name":"rmAI","path":"rooms/rmAI/rmAI.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

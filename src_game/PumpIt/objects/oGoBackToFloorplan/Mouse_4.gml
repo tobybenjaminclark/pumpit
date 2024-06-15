@@ -1,5 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-instance_create_layer(x,y,"Instances",oFloorplanMap);
+global.show_floorplan = true;
 room_goto(rmFloorplan);

@@ -9,6 +9,7 @@
     {"name":"inst_1DA389EE","path":"rooms/rmWelcome/rmWelcome.yy",},
     {"name":"inst_2F762011","path":"rooms/rmWelcome/rmWelcome.yy",},
     {"name":"inst_F410FF3","path":"rooms/rmWelcome/rmWelcome.yy",},
+    {"name":"inst_7EC4AD7A","path":"rooms/rmWelcome/rmWelcome.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -18,6 +19,7 @@
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":672.0,"y":320.0,},
         {"$GMRInstance":"","%Name":"inst_2F762011","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2F762011","objectId":{"name":"oInputBox","path":"objects/oInputBox/oInputBox.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":672.0,"y":384.0,},
         {"$GMRInstance":"","%Name":"inst_F410FF3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_F410FF3","objectId":{"name":"oSubmitLocationButton","path":"objects/oSubmitLocationButton/oSubmitLocationButton.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.75,"scaleY":2.0,"x":683.0,"y":512.0,},
+        {"$GMRInstance":"","%Name":"inst_7EC4AD7A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7EC4AD7A","objectId":{"name":"oClient","path":"objects/oClient/oClient.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":32.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_1E0A8C5","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_1E0A8C5","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":0.37843797,"scaleY":0.378438,"spriteId":{"name":"sprLogo","path":"sprites/sprLogo/sprLogo.yy",},"x":431.9064,"y":128.0,},
