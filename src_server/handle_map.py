@@ -1,5 +1,6 @@
 from enum import Enum
 import tkinter as tk
+from threading import Thread
 
 class Cell(Enum):
     WALL = 1
@@ -16,11 +17,17 @@ class MapHandler():
 
     def __init__(self):
         self.map = self.create_test_map()
+        self.display = True
+        if(self.display): 
+            self.thread = Thread(target=self.display_map)
+            self.thread.start()
         
-        self.window = tk.Tk()
+        
+        # actual code here
+        while True:
+            pass
 
-        self.display_test_map()
-        self.window.mainloop()
+        
         
 
     def create_test_map(self):
@@ -39,7 +46,8 @@ class MapHandler():
 
     
 
-    def display_test_map(self):
+    def display_map(self):
+        self.window = tk.Tk()
         for i, row in enumerate(self.map):
             for j, cell in enumerate(row):
                 color = self.get_color(cell)
@@ -50,6 +58,7 @@ class MapHandler():
                     bg=color
                 )
                 frame.grid(row=i, column=j)
+        self.window.mainloop()
 
     def get_color(self, cell):
         color_map = {
