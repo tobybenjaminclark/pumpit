@@ -2,6 +2,7 @@
 # Test again
 import numpy as np
 
+# do physix
 
 def energy_flow(K, area, temp_grad):
     energy_flow = -K * area * temp_grad
