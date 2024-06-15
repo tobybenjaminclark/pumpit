@@ -30,7 +30,7 @@ class MapHandler():
             self.thread = Thread(target=self.display_map)
             self.thread.start()
 
-        self.handle_maps()
+        #self.handle_maps()
 
         
         
@@ -61,9 +61,14 @@ class MapHandler():
 
     def find_pump_positions(self, lengths):
 
+        # temp
+        return []
+
         # lengths = vertical and horizontal lengths
         for x in lengths:
                 for l in x:
+
+                    
                 
                     length = l[2][0] + l[2][1]
 
@@ -178,4 +183,4 @@ class MapHandler():
         }
         return color_map.get(cell, 'white')
 
-m = MapHandler()
+#m = MapHandler()

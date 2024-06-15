@@ -39,12 +39,10 @@ class JazzhandsController():
         while self.running:
             self.update_client()
 
+            message = {"heatmap": self.map_handler.heatmap}
             
-            #self.map, self.heatmap = self.map_handler.handle_maps()
-
-            #self.try_transmit_to_client({"map": self.map, "heatmap": self.heatmap})
-
-            self.try_transmit_to_client("")
+            print(message)
+            self.try_transmit_to_client(message)
         print("stopped running")
 
     def update_client(self) -> None:

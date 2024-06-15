@@ -4,7 +4,7 @@ import socket
 import threading
 from queue import Queue
 import json
-from chatgpt import *
+#from chatgpt import *
 
 HOST = "127.0.0.1"
 PORT = 7783
@@ -118,18 +118,20 @@ class GMS2Client():
         if self.conn is None:
             return
 
-        self.conn.send(self.next_send.encode('utf-8') + b'\n')
+        self.conn.send(json.dumps(self.next_send).encode('utf-8') + b'\n')
         reply = self.receive_data(self.conn)
 
         if reply == "": pass
         else:
 
             try:
+                reply = reply.split('\x00', 1)[0]
                 treply = json.loads(reply)
                 if(treply['type'] == "GPT"):
-                    self.next_send = generate_response(treply['prompt'])
+                    #self.next_send = generate_response(treply['prompt'])
+                    self.next_send = "hello"
             except Exception as e:
                 print(f"Error decoding {reply} :: {e}")
-        self.next_send = "";
+        self.next_send = ""
         print(reply)
         print()
