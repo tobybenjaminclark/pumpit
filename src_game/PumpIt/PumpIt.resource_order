@@ -23,6 +23,7 @@
     {"name":"oGoToAI","order":6,"path":"objects/oGoToAI/oGoToAI.yy",},
     {"name":"oInputBox","order":3,"path":"objects/oInputBox/oInputBox.yy",},
     {"name":"oLabel","order":2,"path":"objects/oLabel/oLabel.yy",},
+    {"name":"oSubmitAI","order":8,"path":"objects/oSubmitAI/oSubmitAI.yy",},
     {"name":"oSubmitLocationButton","order":4,"path":"objects/oSubmitLocationButton/oSubmitLocationButton.yy",},
     {"name":"oVisualiseTile","order":1,"path":"objects/oVisualiseTile/oVisualiseTile.yy",},
     {"name":"rmAI","order":2,"path":"rooms/rmAI/rmAI.yy",},

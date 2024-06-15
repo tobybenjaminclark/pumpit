@@ -42,6 +42,7 @@
     {"id":{"name":"oGoToAI","path":"objects/oGoToAI/oGoToAI.yy",},},
     {"id":{"name":"oInputBox","path":"objects/oInputBox/oInputBox.yy",},},
     {"id":{"name":"oLabel","path":"objects/oLabel/oLabel.yy",},},
+    {"id":{"name":"oSubmitAI","path":"objects/oSubmitAI/oSubmitAI.yy",},},
     {"id":{"name":"oSubmitLocationButton","path":"objects/oSubmitLocationButton/oSubmitLocationButton.yy",},},
     {"id":{"name":"oVisualiseTile","path":"objects/oVisualiseTile/oVisualiseTile.yy",},},
     {"id":{"name":"rmAI","path":"rooms/rmAI/rmAI.yy",},},
