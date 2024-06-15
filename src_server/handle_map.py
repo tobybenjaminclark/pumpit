@@ -23,6 +23,8 @@ class MapHandler():
         if(self.display): 
             self.thread = Thread(target=self.display_map)
             self.thread.start()
+
+        
         
         
 
@@ -35,9 +37,62 @@ class MapHandler():
 
         # return the best, and the heatmap
 
+        pos = self.find_possible_unit_positions()
+
+        for x in range(0, len(pos) - 1, 2):
+            #print(f"{pos[x]}{pos[x+1]}")
+            pass
+
+
         return self.map, self.heatmap
 
 
+    def find_possible_unit_positions(self):
+        # find lengths of vertical and horizontal wall stretches
+
+
+        wall_vals = []
+
+        # if you find a start value, search until you find an end value
+
+
+
+
+
+        for y in range(len(self.map)):
+
+            counter = 0
+            
+            for x in range(len(self.map[y])):
+                
+                if self.map[y][x] == Cell.WALL.value:
+
+                    if counter == 0:
+                        wall_vals.append([x, y])
+                    elif x == len(self.map[y]) - 1:
+                        wall_vals.append([x, y])
+
+                    counter +=1
+                
+                
+                else:
+                    if counter > 0:
+                        counter = 0
+                        # do not add singular length walls
+                        if [x-1, y] in wall_vals:
+                            wall_vals.remove([x-1,y])
+                        else:
+                            wall_vals.append([x-1, y])
+
+        return wall_vals
+        
+
+
+            
+        
+
+                    
+                
         
         
     def create_test_heatmap(self):
@@ -61,7 +116,9 @@ class MapHandler():
     
 
     def display_map(self):
+
         self.window = tk.Tk()
+        
         for i, row in enumerate(self.map):
             for j, cell in enumerate(row):
                 color = self.get_color(cell)
@@ -72,18 +129,20 @@ class MapHandler():
                     bg=color
                 )
                 frame.grid(row=i, column=j)
+
         self.window.mainloop()
+        
 
     def get_color(self, cell):
         color_map = {
-            Cell.WALL: 'purple',
-            Cell.WINDOW: 'blue',
-            Cell.DOOR: 'brown',
-            Cell.LIVING_ROOM: 'green',
-            Cell.KITCHEN: 'yellow',
-            Cell.BATHROOM: 'aqua',
-            Cell.BEDROOM: 'purple',
-            Cell.OTHER: 'gray'
+            Cell.WALL.value: 'purple',
+            Cell.WINDOW.value: 'blue',
+            Cell.DOOR.value: 'brown',
+            Cell.LIVING_ROOM.value: 'green',
+            Cell.KITCHEN.value: 'yellow',
+            Cell.BATHROOM.value: 'aqua',
+            Cell.BEDROOM.value: 'purple',
+            Cell.OTHER.value: 'gray'
         }
         return color_map.get(cell, 'white')
 

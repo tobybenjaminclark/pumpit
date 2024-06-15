@@ -92,10 +92,10 @@ class GMS2Client():
         Send messages to the GMS2 server if any are queued.
         """
 
-        self.send_response("")
-
         # if the pi has sent an image (pi queue not empty), process it
         while not stop_event.is_set():
+
+            self.send_response("")
 
             if not self.client_queue.empty():
                 pass
@@ -108,21 +108,18 @@ class GMS2Client():
         return None
 
     def receive_data(self, conn):
-        # Initialize an empty byte string to accumulate data
-        received_data = b""  
+        # Initialize an empty byte string to accumulate data 
 
-        while True:
-            # Receive 1024 bytes of data
-            data = conn.recv(1024)
+        # Receive 1024 bytes of data
+        data = conn.recv(1024)
 
-            # Append the newly received data to the current item of data being collected
-            received_data += data  
+        data = data.decode('latin-1')
 
-            # If the message delimiter is in the message, the end of the message has been found
-            if b'\n' in data:
-                break
+        
 
-        return received_data
+        print(data)
+
+        return data
         
     def send_response(self, response):
             
@@ -130,3 +127,6 @@ class GMS2Client():
                 return
             
             self.conn.send(json.dumps(response).encode('utf-8') + b'\n')
+            reply = self.receive_data(self.conn)
+            print(reply)
+            print()
