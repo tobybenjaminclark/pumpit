@@ -120,7 +120,7 @@ class GMS2Client():
 
         self.conn.send(json.dumps(self.next_send).encode('utf-8') + b'\n')
         reply = self.receive_data(self.conn)
-
+        print(reply)
         if reply == "": pass
         else:
 
@@ -129,6 +129,9 @@ class GMS2Client():
                 treply = json.loads(reply)
                 if(treply['type'] == "GPT"):
                     self.next_send = "GPT" + generate_response(treply['prompt']).replace('\n', '').replace('\r', '')
+                if (treply['type'] == "FLOORPLAN"):
+                    print(treply["data"])
+                    self.next_send = "GPT You sent a floorplan!";
             except Exception as e:
                 print(f"Error decoding {reply} :: {e}")
                 self.next_send = ""

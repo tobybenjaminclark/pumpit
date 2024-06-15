@@ -16,7 +16,7 @@ global.last_gpt = "Hi, I'm Heat Geek, how can I help?";
 client_socket = network_create_socket(network_socket_tcp);
 server_socket = network_connect_raw_async(client_socket, "127.0.0.1", 7783);
 //create a buffer with which to send information
-send_buffer = buffer_create(512, buffer_fixed, 1);
+send_buffer = buffer_create(2048, buffer_fixed, 1);
 
 if(server_socket < 0) show_message("Could not connect! Try turning on the server?");
 else

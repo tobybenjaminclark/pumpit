@@ -2,8 +2,9 @@
 # Test again
 import numpy as np
 
-# do physix
 
+
+# do physix
 def energy_flow(K, area, temp_grad):
     energy_flow = -K * area * temp_grad
     return energy_flow
@@ -14,7 +15,6 @@ def therm_conduct():
     vol_heat_cap = SHC * density    #SHC is specific heat capacity, atm is standard atmospheric pressure
     boltzmann = 1.381 * (10**-23)
     mean_free_path = 10**-7
-
 
 def calc_temp_gradient(coordinate):     #coordinate is [y, x] in room
     init_temp = grid[coordinate[0]][coordinate[1]]  # gets the temp based on the coordinate

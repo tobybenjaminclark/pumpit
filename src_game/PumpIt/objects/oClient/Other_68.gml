@@ -132,7 +132,7 @@ if(n_id == server_socket)
 		buffer_write(send_buffer, buffer_string, senddata);
 		network_send_raw(server_socket, send_buffer, buffer_get_size(send_buffer));
 		buffer_delete(send_buffer);
-		send_buffer = buffer_create(512, buffer_fixed, 1);
+		send_buffer = buffer_create(2048, buffer_fixed, 1);
 		
 		
     }
