@@ -4,10 +4,10 @@ import socket
 import threading
 from queue import Queue
 import json
-
+from chatgpt import *
 
 HOST = "127.0.0.1"
-PORT = 9999
+PORT = 7783
 
 
 class GMS2Client():
@@ -22,7 +22,7 @@ class GMS2Client():
         # Create an event to signal the subthreads to safely stop execution.
         self.stop_event = threading.Event()
         self.conn = None
-
+        self.next_send = ""
         self.client_queue = Queue()
 
     def start_thread(self) -> None:
@@ -109,7 +109,7 @@ class GMS2Client():
         data = conn.recv(1024)
 
         data = data.decode('latin-1')
-        print(data)
+        if(data != "EMPTY"): print(data)
 
         return data
         
@@ -118,7 +118,23 @@ class GMS2Client():
         if self.conn is None:
             return
 
-        self.conn.send(json.dumps(response).encode('utf-8') + b'\n')
+        self.conn.send(json.dumps(self.next_send).encode('utf-8') + b'\n')
         reply = self.receive_data(self.conn)
+        print(reply)
+        if reply == "": pass
+        else:
+
+            try:
+                reply = reply.split('\x00', 1)[0]
+                treply = json.loads(reply)
+                if(treply['type'] == "GPT"):
+                    self.next_send = "GPT" + generate_response(treply['prompt']).replace('\n', '').replace('\r', '')
+                if (treply['type'] == "FLOORPLAN"):
+                    print(treply["data"])
+                    self.next_send = "GPT You sent a floorplan!";
+            except Exception as e:
+                print(f"Error decoding {reply} :: {e}")
+                self.next_send = ""
+
         print(reply)
         print()

@@ -32,3 +32,5 @@ for (var _x = 0; _x < ds_grid_width(floorplan); _x += 1) {
         }
     }
 }
+
+global.floorplan = floorplan;

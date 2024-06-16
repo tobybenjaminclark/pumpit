@@ -3,16 +3,22 @@
 import numpy as np
 import time
 
-# do physix
 
 thermal_conductivity = 0.024
 def heat_flux(temp_gradient):
     heat_flux = thermal_conductivity * temp_gradient
+
+# do physix
+def energy_flow(K, area, temp_grad):
+    energy_flow = -K * area * temp_grad
+    return energy_flow
+
+def therm_conduct():
+    SHC = 1005
     density = 1.225
     vol_heat_cap =  density    #SHC is specific heat capacity, atm is standard atmospheric pressure
     boltzmann = 1.381 * (10**-23)
     mean_free_path = 10**-7
-
 
 def calc_temp_gradient(coordinate):     #coordinate is [y, x] in room
     init_temp = grid[coordinate[0]][coordinate[1]]  # gets the temp based on the coordinate

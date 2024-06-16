@@ -4,7 +4,7 @@ from handle_map import MapHandler
 
 
 class JazzhandsController():
-    running: bool                                   # A flag to determine if the program has ended. Facilitates safe termination of threads.
+    running: bool                                      # A flag to determine if the program has ended. Facilitates safe termination of threads.
     gamemaker_client: GMS2Client 
     gamemaker_queue: Queue                             # An instance of the client queue. Facilitates sending gesture data to the client object.
     map_handler: MapHandler
@@ -39,12 +39,10 @@ class JazzhandsController():
         while self.running:
             self.update_client()
 
+            message = {"heatmap": self.map_handler.heatmap}
             
-            #self.map, self.heatmap = self.map_handler.handle_maps()
-
-            #self.try_transmit_to_client({"map": self.map, "heatmap": self.heatmap})
-
-            self.try_transmit_to_client("")
+            # print(message)
+            self.try_transmit_to_client(message)
         print("stopped running")
 
     def update_client(self) -> None:
@@ -66,7 +64,6 @@ class JazzhandsController():
         """
         Attempt to send the most recent gesture from gesture_queue to the GMS2 server.
         """
-
 
         self.gamemaker_client.send_response(message)
 
