@@ -36,6 +36,7 @@
   "resources":[
     {"id":{"name":"fntCoolFont","path":"fonts/fntCoolFont/fntCoolFont.yy",},},
     {"id":{"name":"fntSmallCool","path":"fonts/fntSmallCool/fntSmallCool.yy",},},
+    {"id":{"name":"fntTiny","path":"fonts/fntTiny/fntTiny.yy",},},
     {"id":{"name":"lastGpt","path":"objects/lastGpt/lastGpt.yy",},},
     {"id":{"name":"oClient","path":"objects/oClient/oClient.yy",},},
     {"id":{"name":"oFloorplanMap","path":"objects/oFloorplanMap/oFloorplanMap.yy",},},
@@ -52,8 +53,10 @@
     {"id":{"name":"rmFloorplan","path":"rooms/rmFloorplan/rmFloorplan.yy",},},
     {"id":{"name":"rmWelcome","path":"rooms/rmWelcome/rmWelcome.yy",},},
     {"id":{"name":"bfs","path":"scripts/bfs/bfs.yy",},},
+    {"id":{"name":"bfs2","path":"scripts/bfs2/bfs2.yy",},},
     {"id":{"name":"bressenhams","path":"scripts/bressenhams/bressenhams.yy",},},
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},},
+    {"id":{"name":"Script5","path":"scripts/Script5/Script5.yy",},},
     {"id":{"name":"sprButton","path":"sprites/sprButton/sprButton.yy",},},
     {"id":{"name":"sprChatGpt","path":"sprites/sprChatGpt/sprChatGpt.yy",},},
     {"id":{"name":"sprGridTile","path":"sprites/sprGridTile/sprGridTile.yy",},},

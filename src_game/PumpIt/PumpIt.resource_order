@@ -18,6 +18,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"fntSmallCool","order":1,"path":"fonts/fntSmallCool/fntSmallCool.yy",},
+    {"name":"fntTiny","order":2,"path":"fonts/fntTiny/fntTiny.yy",},
     {"name":"lastGpt","order":9,"path":"objects/lastGpt/lastGpt.yy",},
     {"name":"oClient","order":5,"path":"objects/oClient/oClient.yy",},
     {"name":"oGoBackToFloorplan","order":7,"path":"objects/oGoBackToFloorplan/oGoBackToFloorplan.yy",},
@@ -32,7 +33,9 @@
     {"name":"rmAI","order":2,"path":"rooms/rmAI/rmAI.yy",},
     {"name":"rmWelcome","order":1,"path":"rooms/rmWelcome/rmWelcome.yy",},
     {"name":"bfs","order":2,"path":"scripts/bfs/bfs.yy",},
+    {"name":"bfs2","order":3,"path":"scripts/bfs2/bfs2.yy",},
     {"name":"bressenhams","order":1,"path":"scripts/bressenhams/bressenhams.yy",},
+    {"name":"Script5","order":4,"path":"scripts/Script5/Script5.yy",},
     {"name":"sprButton","order":5,"path":"sprites/sprButton/sprButton.yy",},
     {"name":"sprChatGpt","order":6,"path":"sprites/sprChatGpt/sprChatGpt.yy",},
     {"name":"sprHeatGeek","order":7,"path":"sprites/sprHeatGeek/sprHeatGeek.yy",},

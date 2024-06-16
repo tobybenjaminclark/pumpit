@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
 var width = ds_grid_width(global.floorplan)
 var height =  ds_grid_height(global.floorplan)
 tempmap = ds_grid_create(width,height);
