@@ -75,7 +75,7 @@ for (var _c = 0; _c < array_length(all_cells); _c++) {
 				correct_count++;
 				
 				show_debug_message(string(ac[0]) + " " + string(ac[1]) + " : is boundary");
-				if(random(1) > 0.05){
+				if(random(1) < 0.1){
 					tempmap[# ac[0], ac[1]] = -150;
 					ds_list_add(emitters, ac);
 				}
@@ -88,17 +88,21 @@ for (var _c = 0; _c < array_length(all_cells); _c++) {
 
 
 
-var EMITTER_POWER = 25;
+var EMITTER_POWER = 15;
 for(var _e = 0; _e < ds_list_size(emitters); _e++){
 	var emit = emitters[| _e];
 	var start_x = emit[0];
 	var start_y = emit[1];
-	var max_distance = 25;
+	var max_distance = 15;
 	
+	// Create a new DS grid with the same dimensions as global.floorplan
 	var ds_grid = ds_grid_create(ds_grid_width(global.floorplan), ds_grid_height(global.floorplan));
-	ds_grid_copy(global.floorplan, ds_grid);
+
+	// Copy the contents of global.floorplan into the new_grid
+	ds_grid_copy(ds_grid, global.floorplan);
+
 	
-	show_debug_message("Simulating emitter " + string(_e));
+	show_debug_message("Simulating emitter " + string(_e) + " at position " + string(start_x) + " " + string(start_y));
 	
     // Check if the start position is a 'free' cell
     if (ds_grid[# start_x, start_y] != 0) {
@@ -133,7 +137,7 @@ for(var _e = 0; _e < ds_list_size(emitters); _e++){
 		var skip = false;
 		
 		show_debug_message("Set temp at " + string(x1) + " " + string(y1) + " to " + string(((max_distance - distance) * 5)));
-		tempmap[# x1, y1] = tempmap[# x1, y1] + ((max_distance - distance) * 5);
+		tempmap[# x1, y1] = tempmap[# x1, y1] + ((max_distance - distance));
 
         // Add the current cell to the flooded list
         array_push(flooded_coords, [x1, y1]);
@@ -158,11 +162,20 @@ for(var _e = 0; _e < ds_list_size(emitters); _e++){
 		}
     }
 	
-	tempmap[# start_x, start_y] = 90;
+	tempmap[# start_x, start_y] = -150;
     // Clean up the queue
     ds_queue_destroy(queue);
 
 }
 
+var EMITTER_POWER = 15;
+for(var _e = 0; _e < ds_list_size(emitters); _e++){
+	var emit = emitters[| _e];
+	var start_x = emit[0];
+	var start_y = emit[1];
+	var max_distance = 15;
+	tempmap[# start_x, start_y] = -150;
+	
+}
 // Clean up	
 ds_map_destroy(filled_cells_set);

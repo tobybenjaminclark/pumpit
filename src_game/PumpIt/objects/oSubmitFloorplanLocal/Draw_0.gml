@@ -20,7 +20,7 @@ for (var _x = 0; _x < ds_grid_width(tempmap); _x++){
 		if(val <= -150){ draw_set_color(c_yellow); }
 		
 		// Define the color endpoints
-		var cold_color = c_blue; // Blue for cold
+		var cold_color = c_navy; // Blue for cold
 		var hot_color = c_red;  // Red for hot
 
 		// Interpolate the color based on the value
@@ -29,16 +29,13 @@ for (var _x = 0; _x < ds_grid_width(tempmap); _x++){
 		// Set the interpolated color
 		draw_set_color(interpolated_color);
 	
-		if(global.floorplan[# _x, _y] == 1){draw_set_color(c_black);}
+		if(global.floorplan[# _x, _y] == 1) { draw_set_color(c_gray); }
+		if(val == -150) { draw_set_color(c_white); }
+		
 		// Draw the rectangle
 		draw_rectangle(_x * 10, _y * 10, _x * 10 + 10, _y * 10 + 10, false);
 
 		
-
-		
-		draw_set_color(c_lime);
-		draw_set_font(fntTiny);
-		if(_x mod 5 == 0 && _y mod 2 == 0) draw_text(_x*10 + 5, _y*10 + 5, string(val));
 		draw_set_color(c_black)
 	}	
 }
