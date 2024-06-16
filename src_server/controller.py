@@ -20,7 +20,6 @@ class JazzhandsController():
 
         # Boolean flag to continuously run the controller until a stopping condition is met.
         self.running = True
-        self.map_handler = MapHandler()
         
     def create_client(self) -> None:
         """
@@ -38,10 +37,10 @@ class JazzhandsController():
         """
         while self.running:
             self.update_client()
-
-            message = {"heatmap": self.map_handler.heatmap}
-            
             # print(message)
+
+            message = ""
+
             self.try_transmit_to_client(message)
         print("stopped running")
 

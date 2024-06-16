@@ -153,6 +153,21 @@ class MapHandler():
             return coordinates
 
 
+
+    def parse_map(self, data):
+        print("parsing")
+        self.map = []
+        self.current_line = []
+
+        for char in data:
+            if char == "0":
+                self.current_line.append(Cell.OTHER.value)
+            if char == "1":
+                self.current_line.append(Cell.WALL.value)
+            if char == "R":
+                self.map.append(self.current_line)
+                self.current_line = []
+
     def find_room_boundaries(self, matrix):
         if not matrix:
             return []
@@ -256,8 +271,8 @@ class MapHandler():
                 color = self.get_color(cell)
                 frame = tk.Frame(
                     master=self.window,
-                    width=20,
-                    height=20,
+                    width=1,
+                    height=1,
                     bg=color
                 )
                 frame.grid(row=i, column=j)
