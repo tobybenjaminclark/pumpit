@@ -8,4 +8,4 @@ ds_grid_clear(floorplan, 0);
 global.selection_mode = SINGULAR;
 global.left_click_pos = [-1, -1];
 global.right_click_pos = [-1, -1];
-global.floorplan = [];
+global.floorplan = floorplan;
