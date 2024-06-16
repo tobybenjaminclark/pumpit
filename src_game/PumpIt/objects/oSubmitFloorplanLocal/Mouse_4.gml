@@ -94,7 +94,9 @@ for(var _e = 0; _e < ds_list_size(emitters); _e++){
 	var start_x = emit[0];
 	var start_y = emit[1];
 	var max_distance = 25;
-	var ds_grid = global.floorplan;
+	
+	var ds_grid = ds_grid_create(ds_grid_width(global.floorplan), ds_grid_height(global.floorplan));
+	ds_grid_copy(global.floorplan, ds_grid);
 	
 	show_debug_message("Simulating emitter " + string(_e));
 	
